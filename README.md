@@ -80,7 +80,8 @@ matrix[u, v] = min(matrix[u, v], matrix[u, k] + matrix[k, v])
 That means: if the current path from u to v is longer than the path from u to k plus the path from k to v, then we remove that current path and accept the new path.
 
 Function Floyd:
-     *For each tile i in board:
+
+     For each tile i in board:
      
         For each tile j in board:
         
@@ -96,7 +97,7 @@ Function Floyd:
                 
                     matrix[i, j] < matrix[i, k] + matrix[k, j]
                     
-                    path[i, j] = path[i, k]     # move to k right after leave i*
+                    path[i, j] = path[i, k]     # move to k right after leave i
                     
 The advantage of Floyd-Warshall algorithm lies in the reusability because the shortest path between all pairs of vertices is calculated in advance. Therefore, querying what the next tile to move to and how to move to that tile requires minimal cost.
 
